@@ -28,3 +28,6 @@ const Appointment = (sequelize) => {
 };
 
 module.exports = Appointment;
+
+
+//CULO
