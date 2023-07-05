@@ -1,16 +1,22 @@
 const express = require("express")
 const axios = require("axios")
+const dotenv = require("dotenv")
+
+
+dotenv.config()
+
+const {API_CAR_KEY, API_CAR_HOST} = process.env
 
 const options = {
     method: 'GET',
     url: 'https://car-data.p.rapidapi.com/cars',
     params: {
-        limit: '10',
+        limit: '25',
         page: '0'
     },
     headers: {
-        'X-RapidAPI-Key': '7bf6f110b0msh404ef724c1e3f2fp186559jsn28f1c86e6a97',
-        'X-RapidAPI-Host': 'car-data.p.rapidapi.com'
+        'X-RapidAPI-Key': API_CAR_KEY,
+        'X-RapidAPI-Host': API_CAR_HOST
     }
 };
 const carRouter = express.Router()
