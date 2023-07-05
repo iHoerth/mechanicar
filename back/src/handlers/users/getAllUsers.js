@@ -1,11 +1,9 @@
-const axios = require('axios');
+const { fetchUsersFromDb } = require('../../controllers/users/fetchUsersFromDb');
 
 const getAllUsers = async (req, res) => {
-  const { id } = req.params;
   try {
-    const results = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
-    const user = results.data;
-    res.status(200).json(user);
+    const results = await fetchUsersFromDb();
+    res.status(200).json(results);
   } catch (err) {
     res.status(400).json(err);
   }
