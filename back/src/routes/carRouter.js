@@ -1,10 +1,9 @@
 const express = require("express")
-const axios = require("axios")
-
+const getAllCars = require("../handlers/cars/getAllCars")
 const carRouter = express.Router()
 
 
-carRouter.get("/", )
+carRouter.get("/", getAllCars)
 
 
 carRouter.get("/")
