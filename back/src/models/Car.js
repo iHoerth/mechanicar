@@ -6,15 +6,16 @@ const Car = (sequelize) => {
     {
       id: {
         type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
       },
       brand: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       model: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       year: {
         type: DataTypes.INTEGER,
@@ -22,7 +23,7 @@ const Car = (sequelize) => {
       },
       plate: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
     },
     {
