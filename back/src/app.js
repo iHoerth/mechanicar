@@ -1,26 +1,13 @@
 const express = require('express');
-
+const morgan = require('morgan')
 const app = express();
 
-// app.get('/users', async (req, res) => {
-//   const { name } = req.query;
-//   try {
-//     const data = await getUserByName(name);
-//     res.json(data);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+const router = require('./routes')
 
+app.use(express.json())
+app.use(morgan());
 
-
-
-app.get();
-app.get();
-app.get();
-app.get();
-app.get();
-
+app.use(router);
 
 
 module.exports = app;
