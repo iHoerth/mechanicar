@@ -15,3 +15,5 @@ const fetchUsersFromDb = async () => {
 };
 
 module.exports = { fetchUsersFromDb };
+
+

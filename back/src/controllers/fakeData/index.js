@@ -18,13 +18,12 @@ const generateFakeData = async (/* limit = 5 */) => {
       Car.create({
         brand: faker.vehicle.manufacturer(),
         model: faker.vehicle.vehicle(),
-        year:  1990 + Math.floor(Math.random()*32),
-        plate: faker.vehicle.vrm()
+        year: 1990 + Math.floor(Math.random() * 32),
+        plate: faker.vehicle.vrm(),
       });
     }
-  }
-  generateFakeCars()
+  };
+  generateFakeCars();
 };
-
 
 module.exports = { generateFakeData };
