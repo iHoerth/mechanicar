@@ -18,7 +18,7 @@ const Appointment = (sequelize) => {
         allowNull: false,
       },
       price: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       description: {
@@ -26,11 +26,9 @@ const Appointment = (sequelize) => {
       },
     },
     {
-      timestampse: false,
+      timestamps: false,
     }
   );
 };
 
 module.exports = Appointment;
-
-//CULO

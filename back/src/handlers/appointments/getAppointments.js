@@ -1,17 +1,14 @@
-const axios = require('axios');
 const {
-  fetchAppointmentsByEmail,
-} = require('../../controllers/appointments/fetchAppointmentsByEmail');
-const {
-  fetchAppointmentsByPlate,
-} = require('../../controllers/appointments/fetchAppointmentsByPlate');
+  fetchAppointmentByCarId,
+} = require('../../controllers/appointments/fetchAppointmentByCarId');
+const { fetchAllAppointments } = require('../../controllers/appointments/fetchAllAppointments');
 
 const getAppointments = async (req, res) => {
-  const { email, plate } = req.query;
+  const { id } = req.params;
+  const parsedId = parseInt(id);
+  console.log(parsedId)
   try {
-    const appointments = email
-      ? await fetchAppointmentsByEmail(email)
-      : await fetchAppointmentsByPlate(plate);
+    const appointments = parsedId ? await fetchAppointmentByCarId(parsedId) : await fetchAllAppointments();
     res.status(200).json({ status: 'SUCCESS', payload: appointments });
   } catch (error) {
     res.status(400).json(error);

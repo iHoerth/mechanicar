@@ -27,8 +27,8 @@ Car.hasMany(Appointment);
 Appointment.belongsTo(Car);
 
 // USER <==> APPOINTMENT
-User.hasMany(Appointment);
-Appointment.belongsTo(User);
+// User.hasMany(Appointment);
+// Appointment.belongsTo(User);
 
 // User.belongsToMany(Appointment, { through: 'appointments_users' });
 // Appointment.belongsToMany(User, { through: 'appointments_users' });
