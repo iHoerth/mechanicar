@@ -1,16 +1,24 @@
 const dotenv = require('dotenv');
-const { fetchCarFromDb } = require('../../controllers/cars/fetchCarsFromDb');
-const { fetchCarByPlate } = require('../../controllers/cars/fetchCarByPlate');
+const { fetchAllCars } = require('../../controllers/cars/fetchAllCars');
+const { fetchCarByQueries } = require('../../controllers/cars/fetchCarByQueries');
 
 dotenv.config();
 
 const getAllCars = async (req, res) => {
     try {
-        const {plate} = req.query
-        console.log(plate)
+        const {brand, model, year, plate} = req.query
+        /* const queries = {} */
+        const queries = {
+            ...(brand && { brand }),
+            ...(model && { model }),
+            ...(year && { year: parseInt(year) }),
+            ...(plate && { plate }),
+        };
+        console.log(queries)
+        const hasQueries = Object.keys(queries).length ? true : false
         
-        const filteredData = plate ? await fetchCarByPlate(plate) : await fetchCarFromDb();
-        console.log(filteredData)
+        const filteredData = hasQueries ? await fetchCarByQueries(queries) : await fetchAllCars()
+        /* console.log(filteredData) */
         res.status(200).json({
             status: 'Success',
             payload: filteredData,
