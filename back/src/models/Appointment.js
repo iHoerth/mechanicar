@@ -21,6 +21,9 @@ const Appointment = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+      description: {
+        type: DataTypes.STRING,
+      },
     },
     {
       timestampse: false,

@@ -1,10 +1,8 @@
 const express = require('express');
 const appointmentsRouter = express.Router();
 
-const getAllUsersAppointments = require('../handlers/appointments/getAllUsersAppointments');
-const getAllUsersIdAppointments = require('../handlers/appointments/getUserIdAppointments');
+const getAppointments = require('../handlers/appointments/getAppointments');
 
-appointmentsRouter.get('/:userId', getAllUsersAppointments);
-appointmentsRouter.get('/', getAllUsersIdAppointments);
+appointmentsRouter.get('/', getAppointments);
 
 module.exports = appointmentsRouter;
