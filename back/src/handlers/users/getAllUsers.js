@@ -1,8 +1,8 @@
-const { fetchUsersFromDb } = require('../../controllers/users/fetchUsersFromDb');
+const { fetchAllUsers } = require('../../controllers/users/fetchAllUsers');
 
 const getAllUsers = async (req, res) => {
   try {
-    const results = await fetchUsersFromDb();
+    const results = await fetchAllUsers();
     res.status(200).json({
       status: 'Success',
       payload: results,
