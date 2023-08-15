@@ -2,10 +2,9 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 const { DB_NAME, DB_PORT, DB_PASSWORD, DB_USER, DB_HOST } = process.env;
 
-const CarModel = require('../src/models/Car');
-const UserModel = require('../src/models/User');
-const AppointmentModel = require('../src/models/Appointment');
-// const AppointmentModel = require('../src/models/Appointment');
+const CarModel = require('./models/postgres/Car.js');
+const UserModel = require('./models/postgres/User.js');
+const AppointmentModel = require('./models/postgres/Appointment.js');
 
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
