@@ -6,8 +6,7 @@ const getAllUsers = require('../handlers/users/getAllUsers');
 const getUserByEmail = require('../handlers/users/getUserByEmail');
 // const postUser = require('../handlers/users/postUser');
 
-
-usersRouter.get('/', getUserByEmail)
+usersRouter.get('/', getUserByEmail);
 usersRouter.get('/', getAllUsers);
 usersRouter.get('/:id', getUserById);
 

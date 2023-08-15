@@ -4,7 +4,7 @@ const { DB_NAME, DB_PORT, DB_PASSWORD, DB_USER, DB_HOST } = process.env;
 
 const CarModel = require('../src/models/Car');
 const UserModel = require('../src/models/User');
-const AppointmentModel = require('../src/models/Appointment')
+const AppointmentModel = require('../src/models/Appointment');
 // const AppointmentModel = require('../src/models/Appointment');
 
 const sequelize = new Sequelize(
