@@ -1,4 +1,3 @@
-const axios = require('axios');
 const { fetchUserById } = require('../../controllers/users/fetchUserById');
 
 const getUserById = async (req, res) => {
