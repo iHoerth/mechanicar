@@ -1,8 +1,10 @@
-const { where } = require('sequelize');
-const { Car } = require('../../db');
+const { Car, Appointment } = require('../../db');
 
 const fetchCarById = async (id) => {
-  const car = await Car.findOne({ where: { id: id } });
+  const car = await Car.findOne({
+    where: { id: id },
+    include: Appointment,
+  });
   return car;
 };
 

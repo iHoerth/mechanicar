@@ -1,6 +1,6 @@
 const {
   fetchAppointmentByCarId,
-} = require('../../controllers/appointments/fetchAppointmentByCarId');
+} = require('../../controllers/appointments/fetchAppointmentById');
 const { fetchAllAppointments } = require('../../controllers/appointments/fetchAllAppointments');
 
 const getAppointments = async (req, res) => {
@@ -17,4 +17,4 @@ const getAppointments = async (req, res) => {
   }
 };
 
-module.exports = getAppointments;
+module.exports = { getAppointments };

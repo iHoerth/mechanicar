@@ -1,17 +1,8 @@
-const { User } = require('../../db');
+const { User, Car } = require('../../db');
 
-// User.findAll () ----> devuelve TODOS
-// User.findByPK(pk) ----> devuelve el user con el id dado
-// User.findOne({where: {atributoDado: valorDado}})   ----> devuelve todos los que el atributoDado coinciden con el valorDado
-// ej   User.find({where :{name: 'nahuel'}})
-//User.create(atributos) ----> crea un usuario nuevo con los atributos dados
-
-//User.modify();
-//User.delete();
 
 const fetchAllUsers = async () => {
-  const users = await User.findAll();
-  console.log(users)
+  const users = await User.findAll({ include: Car });
   return users;
 };
 
