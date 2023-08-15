@@ -2,7 +2,7 @@ const { fetchUserByEmail } = require('../../controllers/users/fetchUserByEmail')
 
 const getAllUsers = async (req, res) => {
   const { email } = req.query;
-  console.log(email)
+  console.log(email);
   try {
     const user = await fetchUserByEmail(email);
     res.status(200).json({
