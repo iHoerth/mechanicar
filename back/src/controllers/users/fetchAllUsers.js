@@ -11,6 +11,7 @@ const { User } = require('../../db');
 
 const fetchAllUsers = async () => {
   const users = await User.findAll();
+  console.log(users)
   return users;
 };
 
